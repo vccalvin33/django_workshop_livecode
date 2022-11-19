@@ -1,79 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'app/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% block content %}
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <h2 class="mb-4">Sign Up</h2>
 
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+                <form>
 
-    <!--CSS -->
-    <link rel="stylesheet" href="../../static/app/main.css">
+                    <!-- Username input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="username-form">Username</label>
+                        <input type="text" id="username-form" class="form-control form-control-lg"
+                            placeholder="Enter a username" required />
+                    </div>
 
-    <title>To Do List</title>
-</head>
+                    <!-- Email input -->
+                    <div class="form-outline mb-4">
+                        <label class="form-label" for="email-form">Email Address</label>
+                        <input type="email" id="email-form" class="form-control form-control-lg"
+                            placeholder="Enter a valid email address" required />
+                    </div>
 
-<body>
-    <section class="vh-100">
-        <div class="container-fluid h-custom">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-                        class="img-fluid" alt="Sample image">
-                </div>
-                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <h2 class="mb-4">Sign Up</h2>
+                    <!-- Password input -->
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="password-form">Password</label>
+                        <input type="password" id="password-form" class="form-control form-control-lg"
+                            placeholder="Enter password" required />
+                    </div>
 
-                    <form>
+                    <!-- Password confirmation -->
+                    <div class="form-outline mb-3">
+                        <label class="form-label" for="validation-form">Confirm Password</label>
+                        <input type="password" id="validation-form" class="form-control form-control-lg"
+                            placeholder="Enter password again" required />
+                    </div>
 
-                        <!-- Username input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="username-form">Username</label>
-                            <input type="text" id="username-form" class="form-control form-control-lg"
-                                placeholder="Enter a username" required />
-                        </div>
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <button type="submit" class="btn btn-primary btn-lg"
+                            style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                        <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="{% url 'login' %}"
+                                class="link-danger">Login</a></p>
+                    </div>
 
-                        <!-- Email input -->
-                        <div class="form-outline mb-4">
-                            <label class="form-label" for="email-form">Email Address</label>
-                            <input type="email" id="email-form" class="form-control form-control-lg"
-                                placeholder="Enter a valid email address" required />
-                        </div>
-
-                        <!-- Password input -->
-                        <div class="form-outline mb-3">
-                            <label class="form-label" for="password-form">Password</label>
-                            <input type="password" id="password-form" class="form-control form-control-lg"
-                                placeholder="Enter password" required />
-                        </div>
-
-                        <!-- Password confirmation -->
-                        <div class="form-outline mb-3">
-                            <label class="form-label" for="validation-form">Confirm Password</label>
-                            <input type="password" id="validation-form" class="form-control form-control-lg"
-                                placeholder="Enter password again" required />
-                        </div>
-
-                        <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" class="btn btn-primary btn-lg"
-                                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="./login.html"
-                                    class="link-danger">Login</a></p>
-                        </div>
-
-                    </form>
-                </div>
+                </form>
             </div>
         </div>
-    </section>
-
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+    </div>
+</section>
+{% endblock %}
